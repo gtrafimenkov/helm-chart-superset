@@ -37,6 +37,9 @@ configFromSecret: '{{ template "superset.fullname" . }}-config'
 ##
 envFromSecret: '{{ template "superset.fullname" . }}-env'
 
+# Name of the secret which will be used to populate env variables
+extraEnvFromSecret: ''
+
 ## Extra environment variables that will be passed into pods
 ##
 extraEnv: {}

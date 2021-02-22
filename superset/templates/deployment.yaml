@@ -63,6 +63,10 @@ spec:
           envFrom:
             - secretRef:
                 name: {{ tpl .Values.envFromSecret . | quote }}
+          {{- if ne .Values.extraEnvFromSecret "" }}
+            - secretRef:
+                name: {{ .Values.extraEnvFromSecret | quote }}
+          {{- end }}
           volumeMounts:
             - name: superset-config
               mountPath: {{ .Values.configMountPath | quote }}
