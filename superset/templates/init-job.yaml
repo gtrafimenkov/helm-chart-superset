@@ -50,6 +50,10 @@ spec:
           - secretRef:
               name: {{ .Values.extraEnvFromSecret | quote }}
         {{- end }}
+        {{- if ne .Values.extraEnvFromConfigMap "" }}
+          - configMapRef:
+              name: {{ .Values.extraEnvFromConfigMap | quote }}
+        {{- end }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         volumeMounts:
           - name: superset-config
