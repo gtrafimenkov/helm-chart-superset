@@ -3,7 +3,29 @@ entries:
   superset:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-02-23T11:57:07.738042013+03:00"
+    created: "2021-03-26T10:29:50.522966586+03:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.2.0
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.3.0
+    description: Apache Superset is a modern, enterprise-ready business intelligence web application
+    digest: a86590dedc83f37b82c3d39c222e03e63732309421ac44db0fbf25ddde19be98
+    maintainers:
+    - email: cychiang0823@gmail.com
+      name: Chuan-Yen Chiang
+      url: https://github.com/cychiang
+    name: superset
+    urls:
+    - https://gtrafimenkov.github.io/helm-chart-superset/superset-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-03-26T10:29:50.506422415+03:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -25,7 +47,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-02-23T11:57:07.719942855+03:00"
+    created: "2021-03-26T10:29:50.492966587+03:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -47,7 +69,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-02-23T11:57:07.703527782+03:00"
+    created: "2021-03-26T10:29:50.475663677+03:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -67,4 +89,4 @@ entries:
     urls:
     - https://gtrafimenkov.github.io/helm-chart-superset/superset-0.1.0.tgz
     version: 0.1.0
-generated: "2021-02-23T11:57:07.68769225+03:00"
+generated: "2021-03-26T10:29:50.456223851+03:00"
