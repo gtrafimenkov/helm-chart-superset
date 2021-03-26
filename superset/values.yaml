@@ -263,3 +263,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+# Name of the service account to use by all application containers
+serviceAccountName: ""

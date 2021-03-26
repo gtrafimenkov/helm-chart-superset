@@ -42,6 +42,9 @@ spec:
     spec:
       securityContext:
         runAsUser: 0 # Needed in order to allow pip install to work in bootstrap
+      {{- if ne .Values.serviceAccountName "" }}
+      serviceAccountName: {{ ".Values.serviceAccountName" }}
+      {{- end }}
       {{- if .Values.supersetNode.initContainers }}
       initContainers:
       {{-  tpl (toYaml .Values.supersetNode.initContainers) . | nindent 6 }}
