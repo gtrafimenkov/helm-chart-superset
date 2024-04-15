@@ -1,17 +1,32 @@
-# Helm chart for apache/superset
+# Modified apache/superset helm chart
 
-https://github.com/apache/superset provides helm chart
-sources, but not the published helm chart.
+## How to modify the official helm chart
 
-The helm chart will be published on GitHub pages:
-https://gtrafimenkov.github.io/helm-chart-superset/
+- download official helm chart you want to use as the basis, for example:
 
-## Building and publishing
+```
+helm repo add superset https://apache.github.io/superset
+helm repo update superset
+rm -rf superset
+helm pull superset/superset --version 0.10.0 --untar
+make build-dep
+```
 
-1. Build a new helm chart: `make build`.
-2. Switch to `gh-pages` branch.
-3. Publish a new release
-    - add the new zip into git index
-    - remove all other new files
-    - run index command: `make index`
-    - commit and push changes
+- commit changes
+
+- make your changes to the helm chart; change version in `superset/Chart.yaml`
+  to better identify your changes in the future
+
+- commit changes
+
+- build the chart using `make build` command
+
+- switch to `gh-pages` branch
+
+- add new `superset-*.tgz` files into the git index using `git add superset-*.tgz` command
+
+- run index command: `make index`
+
+- commit and push changes
+
+- after that use helm repository `https://gtrafimenkov.github.io/helm-chart-superset/` instead of `https://apache.github.io/superset`
