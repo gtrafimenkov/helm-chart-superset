@@ -8,7 +8,7 @@
 helm repo add superset https://apache.github.io/superset
 helm repo update superset
 rm -rf superset
-helm pull superset/superset --version 0.10.0 --untar
+helm pull superset/superset --version 0.12.8 --untar
 make build-dep
 ```
 
